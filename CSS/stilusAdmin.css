@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+main {
+  background-color: antiquewhite;
+  width:1200px;
+  margin:0 auto;
+}
+
+table img {
+  width: 100px;
+  border-radius:10px;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 5px;
+    padding:0;
+    
+}
+
+li {
+    list-style-type: none;
+    padding:2px;
+    border:1px solid lightgrey;
+    text-align: center;
+    border-radius: 5px;
+}
+
+table {
+  padding:5px;
+  border-spacing: 10px;
+}
+
+td:nth-child(even) {
+  text-align:right;
+}
+
+table button {
+  font-size: 8px;
+}
+
+
