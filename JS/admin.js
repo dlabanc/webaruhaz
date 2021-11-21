@@ -32,5 +32,10 @@ $(function () {
       console.log("Törlés");
       
     });
+
+    $(window).on("termeketModosit", (event) => {
+      console.log("Módosít");
+      
+    });
   }
 });
