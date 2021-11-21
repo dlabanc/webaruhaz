@@ -21,18 +21,31 @@ class TermekAdmin extends Termek {
     this.kep = this.elem.children(".kep").children("img");
     this.leiras = this.elem.children(".leiras");
     this.ar = this.elem.children(".ar");
-    this.gomb = this.elem.children(".gomb");
+    this.torlesGomb = this.elem.children("td").children(".torol");
+    this.modositGomb = this.elem.children("td").children(".modosit");
 
     this.setAdatok(this.adat);
 
-    this.gomb.on("click", () => {
-      this.sajatEsemeny2();
+    this.torlesGomb.on("click", () => {
+      this.torolTrigger();
     });
+
+    this.modositGomb.on("click", () => {
+      this.modositTrigger();
+    });
+
   }
-  sajatEsemeny2() {
+  torolTrigger() {
     let esemeny = new CustomEvent("termeketTorol", { detail: this.adat }); //<--- Obj. adatait adja vissza
     window.dispatchEvent(esemeny); //<--- Hozzáadom az eseményt a "játéktérhez"
   }
+
+  modositTrigger() {
+    let esemeny = new CustomEvent("termeketModosit", { detail: this.adat }); //<--- Obj. adatait adja vissza
+    window.dispatchEvent(esemeny); //<--- Hozzáadom az eseményt a "játéktérhez"
+  }
+
+  
 }
 
 class TermekFelhasznalo extends Termek {
